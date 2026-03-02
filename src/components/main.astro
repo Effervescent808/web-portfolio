@@ -12,6 +12,7 @@ import CartiCat from '../images/CartiCat.jpg'
 		<li><a href="Photography">Photography</a></li>
 		<li><a href="Contact">Contact</a></li>
 	</ul>
+	<div class="notification"><p id="notiText">This is a notification</p></div>
 </div>
 
 <div id="intro">
@@ -21,10 +22,11 @@ import CartiCat from '../images/CartiCat.jpg'
 			<p>fweh.</p>
 		</div>
 		<div class="image">
-			<img onclick="alert('SEEYUH');" src={CartiCat.src} alt="Cat" width="500" height="500" style="border-radius:10px;">
+			<img src={CartiCat.src} alt="Cat" width="500" height="500" style="border-radius:10px;">
 		</div>
 	</div>
 </div>
+
 
 <!-- Style -->
 <style>
@@ -38,6 +40,7 @@ import CartiCat from '../images/CartiCat.jpg'
 		width: 100%;
 		height: 5%;
 		border-bottom: 2px solid black;
+		overflow: hidden;
 	}
 
 	ul li {
@@ -86,6 +89,7 @@ import CartiCat from '../images/CartiCat.jpg'
 		padding: 100px;
 	}	
 
+/* Mobile Support */
 @media (max-width: 600px) {
 	html {
 		font-size:13px;
@@ -111,6 +115,54 @@ import CartiCat from '../images/CartiCat.jpg'
 	.paragraph {
 		padding: 35px 50px;
 	}
+}
 
+/* Notification */
+
+	.notification {
+		position: absolute;
+		right: 15px;
+		text-align: center;
+		border: 2px solid black;
+		width: fit-content;
+		padding: 10px 20px;
+		border-radius: 15px;
+		background-color: #1148a1;
+		color: #FFFFFF;
+		transform: translateY(-150%);
+	}
+
+	.notification.show {
+		animation-name: noti;
+		animation-duration: 5s;
+		animation-fill-mode: forwards;
+	}
+    
+	@keyframes noti {
+		0% {transform: translateY(-150%)}
+		20% {transform: translateY(0%)}
+		80% {transform: translateY(0%)}
+		100% {transform: translateY(-150%)}
+	}
 </style>
+
+<script>
+	const img = document.querySelector('.image img');
+	const notification = document.querySelector('.notification');
+	const text = document.getElementById('notiText');
+
+	img.addEventListener('click', () => {
+		notification.classList.remove('show');
+		void notification.offsetWidth; 
+		let adlib = getAdlib();
+		text.innerHTML = adlib;
+		notification.classList.add('show');
+    	});
+
+	function getAdlib(){
+		const adlibs = ["FWEAH", "SEEYUH"];
+		const pick = Math.floor(Math.random() * adlibs.length);
+		return adlibs[pick];
+	}
+</script>
 
