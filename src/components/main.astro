@@ -9,6 +9,7 @@ import CartiCat from '../images/CartiCat.jpg'
 		<li><a href="Home">Home</a></li>
 		<li><a href="Projects">Projects</a></li>
 		<li><a href="Blog">Blog</a></li>
+		<li><a href="Photography">Photography</a></li>
 		<li><a href="Contact">Contact</a></li>
 	</ul>
 </div>
@@ -16,11 +17,11 @@ import CartiCat from '../images/CartiCat.jpg'
 <div id="intro">
 	<div class="box">
 		<div class="paragraph">
-			<h1>Hello, My name is Tyson!</h1>
-			<p>I am a first year Computer Science student at the Illinois Institute of Technology.</p>
+			<h1>PLAYBOI CARTI</h1>
+			<p>fweh.</p>
 		</div>
 		<div class="image">
-			<img src={CartiCat.src} alt="Cat" width="100" height="100">
+			<img src={CartiCat.src} alt="Cat" width="500" height="500" style="border-radius:10px;">
 		</div>
 	</div>
 </div>
@@ -32,7 +33,7 @@ import CartiCat from '../images/CartiCat.jpg'
 		display: flex;
 		justify-content: center;
 		width: 100%;
-		height: 4%;
+		height: 5%;
 		border-bottom: 2px solid black;
 	}
 
@@ -44,7 +45,7 @@ import CartiCat from '../images/CartiCat.jpg'
 
 	ul li a {
 		display: block;
-		padding: 15px;
+		padding: 17px;
 	}
 
 	li:hover {
@@ -60,7 +61,8 @@ import CartiCat from '../images/CartiCat.jpg'
 	}
 
 	.box {
-		width: 75%;
+		display: flex;
+		height: auto;
 		box-sizing: border-box;
 		border: 2px solid black;
 		border-radius: 16px;
@@ -70,6 +72,16 @@ import CartiCat from '../images/CartiCat.jpg'
 	h1 {
 		font-size: 50px;
 	}
+
+	.image {
+		margin-left: auto;
+		padding: 10px;
+	}
+
+	.paragraph {
+		text-align: center;
+		padding: 100px;
+	}	
 
 </style>
 
