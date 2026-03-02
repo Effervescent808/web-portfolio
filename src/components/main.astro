@@ -1,0 +1,87 @@
+---
+import CartiCat from '../images/CartiCat.jpg'
+---
+<!-- HTML -->
+
+<!-- Nav Bar -->
+<div class="navBar">
+	<ul>
+		<li><a href="Home">Home</a></li>
+		<li><a href="Projects">Projects</a></li>
+		<li><a href="Blog">Blog</a></li>
+		<li><a href="Photography">Photography</a></li>
+		<li><a href="Contact">Contact</a></li>
+	</ul>
+</div>
+
+<div id="intro">
+	<div class="box">
+		<div class="paragraph">
+			<h1>PLAYBOI CARTI</h1>
+			<p>fweh.</p>
+		</div>
+		<div class="image">
+			<img src={CartiCat.src} alt="Cat" width="500" height="500" style="border-radius:10px;">
+		</div>
+	</div>
+</div>
+
+<!-- Style -->
+<style>
+/* Nav Bar */
+	.navBar {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		height: 5%;
+		border-bottom: 2px solid black;
+	}
+
+	ul li {
+		float: left;
+		list-style-type: none;
+		transition: transform 0.2s ease;
+	}
+
+	ul li a {
+		display: block;
+		padding: 17px;
+	}
+
+	li:hover {
+		transform: scale(1.5);
+	}
+
+/* Intro */
+	#intro {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		padding: 2%
+	}
+
+	.box {
+		display: flex;
+		height: auto;
+		box-sizing: border-box;
+		border: 2px solid black;
+		border-radius: 16px;
+		padding: 15px;
+	}
+
+	h1 {
+		font-size: 50px;
+	}
+
+	.image {
+		margin-left: auto;
+		padding: 10px;
+	}
+
+	.paragraph {
+		text-align: center;
+		padding: 100px;
+	}	
+
+</style>
+
