@@ -12,7 +12,7 @@ import CartiCat from '../images/CartiCat.jpg'
 		<li><a href="Photography">Photography</a></li>
 		<li><a href="Contact">Contact</a></li>
 	</ul>
-	<div class="notification"><p id="notiText">This is a notification</p></div>
+	<div class="notification"><p id="notiText"></p></div>
 </div>
 
 <div id="intro">
@@ -27,12 +27,10 @@ import CartiCat from '../images/CartiCat.jpg'
 	</div>
 </div>
 
-
-<!-- Style -->
 <style>
 	html { font-size: 16px; }
 
-/* Nav Bar */
+	/* Nav Bar */
 	.navBar {
 		display: flex;
 		justify-content: center;
@@ -58,7 +56,7 @@ import CartiCat from '../images/CartiCat.jpg'
 		transform: scale(1.5);
 	}
 
-/* Intro */
+	/* Intro */
 	#intro {
 		width: 100%;
 		display: flex;
@@ -89,8 +87,8 @@ import CartiCat from '../images/CartiCat.jpg'
 		padding: 100px;
 	}	
 
-/* Mobile Support */
-@media (max-width: 600px) {
+	/* Mobile Support */
+	@media (max-width: 600px) {
 	html {
 		font-size:13px;
 	}
@@ -98,14 +96,14 @@ import CartiCat from '../images/CartiCat.jpg'
 	.navBar {
 		height: 8%;
 	}
-	
+
 	ul li a {
 		padding: 17px 10px;
 	}
 	#intro {
 		height: auto;
 	}
-	
+
 	.box {
 		padding: 2%;
 		flex-direction: column;
@@ -115,9 +113,9 @@ import CartiCat from '../images/CartiCat.jpg'
 	.paragraph {
 		padding: 35px 50px;
 	}
-}
+	}
 
-/* Notification */
+	/* Notification */
 
 	.notification {
 		position: absolute;
@@ -137,12 +135,16 @@ import CartiCat from '../images/CartiCat.jpg'
 		animation-duration: 5s;
 		animation-fill-mode: forwards;
 	}
-    
+
 	@keyframes noti {
 		0% {transform: translateY(-150%)}
 		20% {transform: translateY(0%)}
 		80% {transform: translateY(0%)}
 		100% {transform: translateY(-150%)}
+	}
+
+	.disable_click {
+		pointer-events: none;
 	}
 </style>
 
@@ -157,12 +159,13 @@ import CartiCat from '../images/CartiCat.jpg'
 		let adlib = getAdlib();
 		text.innerHTML = adlib;
 		notification.classList.add('show');
-    	});
+		img.classList.add('disable_click');
+		setTimeout(() => img.classList.remove('disable_click'), 5000);
+	});
 
 	function getAdlib(){
-		const adlibs = ["FWEAH", "SEEYUH"];
+		const adlibs = ["FWEAH", "SEEYUH", "BEE", "HOMICIDE HOMICIDE", "WHAT"];
 		const pick = Math.floor(Math.random() * adlibs.length);
 		return adlibs[pick];
 	}
 </script>
-
