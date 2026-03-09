@@ -6,9 +6,9 @@ import CartiCat from '../images/CartiCat.jpg'
 <!-- Nav Bar -->
 <div class="navBar">
 	<ul>
-		<li><a href="Home">Home</a></li>
-		<li><a href="Projects">Projects</a></li>
-		<li><a href="Photography">Photography</a></li>
+		<li><a href="/">Home</a></li>
+		<li><a href="/projects">Projects</a></li>
+		<li><a href="/photography">Photography</a></li>
 	</ul>
 	<div class="notification"><p id="notiText"></p></div>
 </div>
@@ -23,11 +23,129 @@ import CartiCat from '../images/CartiCat.jpg'
 			<img src={CartiCat.src} alt="Cat" width="500" height="500" style="border-radius:10px;">
 		</div>
 	</div>
+
+
+	<div id="techlist" class="box">
+		<h2>Playboi Carti:</h2>
+		<p>When you go out, go out with a bang, anything you do</p>
+	</div>
+
+	<div id="bigWorkJob">
+		<div id="selector">
+			<button class="selectorButton" id="workButton">songs</button>
+			<button class="selectorButton" id="educationButton">albums</button>
+		</div>
+		<div id="work" class="box">
+			<ul>
+				<li>Magnolia</li>
+				<li>Sky</li>
+				<li>Shoota (feat. Lil Uzi Vert)</li>
+				<li>wokeuplikethis*</li>
+				<li>Location</li>
+				<li>Fell In Luv (feat. Bryson Tiller)</li>
+				<li>ILoveUIHateU</li>
+				<li>R.I.P.</li>
+				<li>Long Time - Intro</li>
+				<li>Vamp Anthem</li>
+				<li>Foreign</li>
+				<li>RATHER LIE (with The Weeknd)</li>
+				<li>New Tank</li>
+				<li>Stop Breathing</li>
+				<li>EVIL J0RDAN</li>
+				<li>FlatBed Freestyle</li>
+				<li>Flex</li>
+				<li>Rockstar Made</li>
+				<li>Love Hurts (feat. Travis Scott)</li>
+				<li>Yah Mean</li>
+				<li>ALL RED</li>
+				<li>On That Time</li>
+				<li>Over</li>
+				<li>New Choppa</li>
+				<li>TOXIC (with Skepta)</li>
+				<li>Lean 4 Real (feat. Skepta)</li>
+				<li>Go2DaMoon (feat. Kanye West)</li>
+				<li>Let It Go</li>
+				<li>R.I.P. Fredo (feat. Young Nudy)</li>
+				<li>@ MEH</li>
+				<li>dothatshit!</li>
+				<li>No Time (feat. Gunna)</li>
+				<li>Poke It Out (with Nicki Minaj)</li>
+				<li>Place</li>
+				<li>Meh</li>
+				<li>GOOD CREDIT (with Kendrick Lamar)</li>
+				<li>Home (KOD)</li>
+				<li>Right Now (feat. Pi'erre Bourne)</li>
+				<li>NO. 9</li>
+				<li>Choppa Won't Miss (feat. Young Thug)</li>
+				<li>New N3on</li>
+				<li>CRUSH (with Travis Scott)</li>
+				<li>Lookin</li>
+				<li>Slay3r</li>
+				<li>M3tamorphosis (feat. Kid Cudi)</li>
+				<li>Old Money</li>
+				<li>Mileage (feat. Chief Keef)</li>
+				<li>PHILLY (with Travis Scott)</li>
+				<li>HBA</li>
+				<li>Middle Of The Summer (feat. Red Coldhearted)</li>
+				<li>Beno!</li>
+				<li>OLYMPIAN</li>
+				<li>Broke Boi</li>
+				<li>JumpOutTheHouse</li>
+				<li>BACKD00R (feat. Kendrick Lamar & Jhené Aiko)</li>
+				<li>Control</li>
+				<li>Half & Half</li>
+				<li>Pull Up</li>
+				<li>Kelly K</li>
+				<li>WAKE UP F1LTHY (with Travis Scott)</li>
+				<li>LIKE WEEZY</li>
+				<li>CRANK</li>
+				<li>FINE SHIT</li>
+				<li>Die4Guy</li>
+				<li>Lame Niggaz</li>
+				<li>MOJO JOJO</li>
+				<li>TRIM (with Future)</li>
+				<li>Teen X (feat. Future)</li>
+				<li>POP OUT</li>
+				<li>K POP</li>
+				<li>King Vamp</li>
+				<li>Not PLaying</li>
+				<li>Top (feat. Pi'erre Bourne)</li>
+				<li>WE NEED ALL DA VIBES (with Young Thug & Ty Dolla $ign)</li>
+				<li>Punk Monk</li>
+				<li>CHARGE DEM HOES A FEE (with Future & Travis Scott)</li>
+				<li>Ain't Doin That</li>
+				<li>No Sl33p</li>
+				<li>RADAR</li>
+				<li>COCAINE NOSE</li>
+				<li>FOMDJ</li>
+				<li>F33l Lik3 Dyin</li>
+				<li>2024</li>
+				<li>I SEEEEEE YOU BABY BOI</li>
+				<li>OPM BABI</li>
+				<li>JUMPIN (with Lil Uzi Vert)</li>
+				<li>TWIN TRIM (with Lil Uzi Vert)</li>
+				<li>BACKR00MS (with Travis Scott)</li>
+				<li>Other Shit</li>
+				<li>Had 2</li>
+				<li>MUNYUN</li>
+				<li>OVERLY</li>
+				<li>DIS 1 GOT IT</li>
+				<li>SOUTH ATLANTA BABY</li>			
+			</ul>
+
+		</div>
+		<div id="education" class="box hide">
+			<ul>
+				<li>Playboi Carti</li>
+				<li>Die Lit</li>
+				<li>Whole Lotta Red</li>
+				<li>Music</li>
+			</ul>
+		</div>
+	</div>
 </div>
 
 <style>
-	html { font-size: 16px; }
-
 	/* Nav Bar */
 	.navBar {
 		display: flex;
@@ -39,12 +157,20 @@ import CartiCat from '../images/CartiCat.jpg'
 		overflow: hidden;
 	}
 
-	ul li {
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	.navBar ul li {
 		float: left;
 		list-style-type: none;
 		transition: transform 0.2s ease;
 	}
 
+	#work ul li, #education ul li {
+		list-style-type: disc;
+	}
 	ul li a {
 		display: block;
 		padding: 17px;
@@ -59,7 +185,9 @@ import CartiCat from '../images/CartiCat.jpg'
 		width: 100%;
 		display: flex;
 		justify-content: center;
-		padding: 2%
+		padding: 2% 17%;
+		flex-direction: column;
+		gap: 35px;
 	}
 
 	.box {
@@ -71,18 +199,76 @@ import CartiCat from '../images/CartiCat.jpg'
 		padding: 15px;
 	}
 
+
+	#techlist, #job, #work, #education {
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 2%;
+		gap: 20px;
+	}
+
+	#bigWorkJob {
+		gap: 5px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	#selector {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.selectorButton {
+		width: 50%;
+		font-size: 20px;
+		border: 2px solid black;
+		padding: 5px;
+		color: grey;
+	}
+
+	.selectorButton:hover {
+		color:black;
+	}
+
+	.selectorButton.active {
+		color:black;
+	}
+
+	#workButton {
+		border-radius: 10px 0px 0px 10px;
+	}
+
+	#educationButton {
+		border-radius: 0px 10px 10px 0px;
+	}
+
+	#work.hide {
+		display: none;
+	}
+
+	#education.hide {
+		display: none;
+	}
+
 	h1 {
 		font-size: 50px;
 	}
 
+	h2 {
+		font-size: 25px;
+	}
+
 	.image {
-		margin-left: auto;
 		padding: 10px;
 	}
 
 	.paragraph {
 		text-align: center;
 		padding: 100px;
+		margin-right: auto;
+		margin-left: auto;
 	}	
 
 	/* Mobile Support */
@@ -159,6 +345,27 @@ import CartiCat from '../images/CartiCat.jpg'
 		notification.classList.add('show');
 		img.classList.add('disable_click');
 		setTimeout(() => img.classList.remove('disable_click'), 5000);
+	});
+
+	const workButton = document.getElementById('workButton');
+	const educationButton = document.getElementById('educationButton');
+	const work = document.getElementById('work');
+	const education = document.getElementById('education');
+
+	workButton.classList.add('active');
+
+	workButton.addEventListener('click', () => {
+		education.classList.add('hide');
+		work.classList.remove('hide');
+		workButton.classList.add('active');
+		educationButton.classList.remove('active');
+	});
+
+	educationButton.addEventListener('click', () => {
+		work.classList.add('hide');
+		education.classList.remove('hide');
+		workButton.classList.remove('active');
+		educationButton.classList.add('active');
 	});
 
 	function getAdlib(){

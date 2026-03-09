@@ -1,0 +1,50 @@
+<div class="navBar">
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/projects">Projects</a></li>
+		<li><a href="/photography">Photography</a></li>
+	</ul>
+	<div class="notification"><p id="notiText"></p></div>
+</div>
+
+<br><br><br>
+<h1>This is a test page</h1>
+
+<style>
+	html { font-size: 16px; }
+
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	h1 {
+		text-align:center;
+	}
+
+	/* Nav Bar */
+	.navBar {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 5%;
+		border-bottom: 2px solid black;
+		overflow: hidden;
+	}
+
+	ul li {
+		float: left;
+		list-style-type: none;
+		transition: transform 0.2s ease;
+	}
+
+	ul li a {
+		display: block;
+		padding: 17px;
+	}
+
+	li:hover {
+		transform: scale(1.5);
+	}
+</style>
