@@ -1,11 +1,15 @@
 ---
-import Placeholder from '../images/placeholder.png'
+import Placeholder500 from '../images/500x500.png'
+import Placeholder300 from '../images/300x200.png'
+import Profile from '../images/Tisen Hot Child.png'
+import Jonk from '../images/Tosen.jpg'
 
 import Resume from '../assets/ResumeJanuary2026.pdf'
 
 import ResumeImage from '../assets/resume.svg'
 import GithubImage from '../assets/github.svg'
 import LinkedInImage from '../assets/linkedin.svg'
+import EmailImage from '../assets/email.svg'
 
 import Python from '../assets/python.svg'
 import Java from '../assets/java.svg'
@@ -44,10 +48,17 @@ import Talon from '../images/talon.png'
 				<a href="https://www.linkedin.com/in/tyson-haufschild-0b0042357/">
 					<img src={LinkedInImage.src} width="40" height="40">
 				</a>
+				<a id="email">
+					<img src={EmailImage.src} style="width:100%; height: 100%;">
+				</a>
+				<div id="dropdown">
+					<a class="email" href="mailto:thaufschild@hawk.illinoistech.edu">School Email</a>
+					<a class="email" href="mailto:haufschildtyson@gmail.com">Personal Email</a>
+				</div>
 			</div>
 		</div>
 		<div class="image">
-			<img src={Placeholder.src} alt="Cat" width="500" height="500" style="border-radius:10px;">
+			<img src={Profile.src} width="500" height="500" style="border-radius:10px;">
 		</div>
 	</div>
 
@@ -107,38 +118,25 @@ import Talon from '../images/talon.png'
 
 	<div id="featuredProjects">
 		<div class="project box">
-			<p>Project 1</p>
-			<img src={Python.src}>
+			<img src={Placeholder300.src}>
+			<div class="projectTitle">
+				<p>Project 1</p>
+			</div>
+			<div class="projectBody">
+				<p>Project Body</p>
+			</div>
 		</div>
 		<div class="project box">
-			<p>Project 2</p>
-			<img src={JavaScript.src}>
-		</div>
-	</div>
-</div>
-
-<div id="footer">
-	<div class="contact">
-		<div style="text-align: center;">	
-			<p>Contact Me!</p>
-		</div>
-		<div style="text-align: left;">
-			<div class="contactBlocks">
-				<p>School Email:</p>
-				<a class="link" href="mailto:thaufschild@hawk.illinoistech.edu">thaufschild@hawk.illinoistech.edu</a>
+			<img src={Placeholder300.src}>
+			<div class="projectTitle">
+				<p>Project 2</p>
 			</div>
-			<div class="contactBlocks">
-				<p>Personal Email:</p>
-				<a class="link" href="mailto:haufschildtyson@gmail.com">haufschildtyson@gmail.com</a>
+			<div class="projectBody">
+				<p>Project Body</p>
 			</div>
 		</div>
 	</div>
-
-	<div id="patchNotes" hidden>
-		<p class="link">Patch Notes</p>
-	</div>
 </div>
-
 
 <style>
 
@@ -150,7 +148,6 @@ import Talon from '../images/talon.png'
 		width: 100%;
 		height: 5%;
 		border-bottom: 2px solid black;
-		overflow: hidden;
 	}
 	ul {
 		margin: 0;
@@ -165,10 +162,7 @@ import Talon from '../images/talon.png'
 		display: block;
 		padding: 17px;
 	}
-	#links a {
-		transition: transform 0.2s ease;
-	}
-	.navBar li:hover, #links a:hover {
+	.navBar li:hover {
 		transform: scale(1.5);
 	}
 
@@ -200,6 +194,36 @@ import Talon from '../images/talon.png'
 		align-items: center;
 		bottom: 5px;
 		left: 5px;
+	}
+	#links a img{
+		transition: transform 0.3s ease;
+	}
+	#links a:hover img {
+		transform: scale(1.3);
+	}
+	#dropdown {
+		display: none;
+		position: absolute;
+		z-index: 10;
+		top: 80%;
+		left: 80%;
+		background: white;
+		border: 1px solid black;
+		border-radius: 8px;
+		padding: 5px 0;
+		white-space: nowrap;
+	}
+	#dropdown a {
+		display: block;
+		padding: 6px 14px;
+	}
+	#email {
+		position: relative;
+		height: 45px;
+		width: 45px;
+	}
+	.email:hover {
+		background-color: lightgrey;
 	}
 	.paragraph {
 		position: relative;
@@ -300,10 +324,15 @@ import Talon from '../images/talon.png'
 		grid-template-columns: repeat(2, 1fr);
 		gap: 20px;
 	}
-
 	.project {
 		display: flex;
 		flex-direction: column;
+	}
+	.projectTitle {
+		padding: 5px;
+	}
+	.projectBody {
+		padding: 5px;
 	}
 
 	/* footer */
@@ -341,6 +370,8 @@ import Talon from '../images/talon.png'
 	}
 	.image {
 		padding: 10px;
+		border: 2px solid black;
+		border-radius: 10px;
 	}
 
 
@@ -384,7 +415,7 @@ import Talon from '../images/talon.png'
 		border-radius: 15px;
 		background-color: #1148a1;
 		color: #FFFFFF;
-		transform: translateY(-150%);
+		transform: translateY(-200%);
 	}
 
 	.notification.show {
@@ -394,10 +425,10 @@ import Talon from '../images/talon.png'
 	}
 
 	@keyframes noti {
-		0% {transform: translateY(-150%)}
+		0% {transform: translateY(-200%)}
 		20% {transform: translateY(0%)}
 		80% {transform: translateY(0%)}
-		100% {transform: translateY(-150%)}
+		100% {transform: translateY(-200%)}
 	}
 
 	.disable_click {
@@ -429,7 +460,7 @@ import Talon from '../images/talon.png'
 	const work = document.getElementById('work');
 	const education = document.getElementById('education');
 
-	workButton.classList.add('active');
+	educationButton.classList.add('active');
 
 	workButton.addEventListener('click', () => {
 		education.classList.add('hide');
@@ -445,9 +476,21 @@ import Talon from '../images/talon.png'
 		educationButton.classList.add('active');
 	});
 
-	function getAdlib(){
-		const adlibs = ["FWEAH", "SEEYUH", "BEE", "HOMICIDE HOMICIDE", "WHAT"];
-		const pick = Math.floor(Math.random() * adlibs.length);
-		return adlibs[pick];
-	}
+	const emailBtn = document.getElementById('email');
+	const dropdown = document.getElementById('dropdown');
+	let hideTimeout;
+
+	emailBtn.addEventListener('mouseenter', () => {
+		clearTimeout(hideTimeout);
+		setTimeout(() => {dropdown.style.display = 'block'}, 100);
+	});
+	emailBtn.addEventListener('mouseleave', () => {
+		hideTimeout = setTimeout(() => dropdown.style.display = 'none', 100);
+	});
+	dropdown.addEventListener('mouseenter', () => {
+		clearTimeout(hideTimeout);
+	});
+	dropdown.addEventListener('mouseleave', () => {
+		hideTimeout = setTimeout(() => dropdown.style.display = 'none', 100);
+	});
 </script>
