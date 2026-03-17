@@ -3,6 +3,8 @@ import Placeholder500 from '../images/500x500.png'
 import Placeholder300 from '../images/300x200.png'
 import Profile from '../images/Tisen Hot Child.png'
 import Jonk from '../images/Tosen.jpg'
+import BearBanking from '../images/bearBanking.png'
+import TuiPassmanager from '../images/tuiPassmanager.png'
 
 import Resume from '../assets/ResumeJanuary2026.pdf'
 
@@ -17,6 +19,9 @@ import JavaScript from '../assets/javascript.svg'
 import Html from '../assets/html.svg'
 import Css from '../assets/css.svg'
 import Sqlite from '../images/sqlite.png'
+import Sqlite2 from '../assets/sqlite2.svg'
+import NodeJS from '../assets/nodejs.svg'
+import Docker from '../assets/docker.svg'
 
 import Talon from '../images/talon.png'
 ---
@@ -72,6 +77,8 @@ import Talon from '../images/talon.png'
 			<img class="techImages" src={Html.src}>
 			<img class="techImages" src={Css.src}>
 			<img class="techImages" src={Sqlite.src}>
+			<img class="techImages" src={NodeJS.src}>
+			<img class="techImages" src={Docker.src}>
 		</div>
 	</div>
 
@@ -104,7 +111,13 @@ import Talon from '../images/talon.png'
 						
 						<div class="infoList">
 							<ul>
-								<li>Member of the IIT Men's Volleyball Team</li>
+								<li>
+									<span>Member of the IIT Men's Volleyball Team</span>
+									<span> - </span>
+									<span>
+										<a href="https://illinoistechathletics.com/sports/mvball/roster" class="link">Roster</a>
+									</span>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -118,21 +131,53 @@ import Talon from '../images/talon.png'
 
 	<div id="featuredProjects">
 		<div class="project box">
-			<img src={Placeholder300.src}>
+			<img src={BearBanking.src} style="border-radius: 10px; border: 2px solid black;">
 			<div class="projectTitle">
-				<p>Project 1</p>
+				<p>Bear Banking</p>
 			</div>
 			<div class="projectBody">
-				<p>Project Body</p>
+				<p>The Bear Banking dashboard is a bear themed dashboard designed for college students to track their finances.</p>
+			</div>
+			<div class="tags">
+				<div class="tag">
+					<p>Node.js</p>
+					<img src={NodeJS.src} style="width: 20px;">
+				</div>
+				<div class="tag">
+					<p>Docker</p>
+					<img src={Docker.src} style="width: 20px;">
+				</div>
+				<div class="tag">
+					<p>HTML</p>
+					<img src={Html.src} style="width: 20px;">
+				</div>
+				<div class="tag">
+					<p>CSS</p>
+					<img src={Css.src} style="width: 20px;">
+				</div>
+				<div class="tag">
+					<p>SQLite</p>
+					<img src={Sqlite2.src} style="width: 20px;">
+				</div>
 			</div>
 		</div>
 		<div class="project box">
-			<img src={Placeholder300.src}>
+			<img src={TuiPassmanager.src} style="border-radius: 10px; border: 2px solid black;">
 			<div class="projectTitle">
-				<p>Project 2</p>
+				<p>Tui Passmanager</p>
 			</div>
 			<div class="projectBody">
-				<p>Project Body</p>
+				<p>Tui Passmanager is a terminal based password manager that stores and retrieves passwords from an encrypted database. It also has password generation capabilities creating a strong random password with a length of your choice.</p>
+			</div>
+			<div class="tags">
+				<div class="tag">
+					<p>Python</p>
+					<img src={Python.src} style="width: 20px;">
+				</div>
+				<div class="tag">
+					<p>SQLite</p>
+					<img src={Sqlite2.src} style="width: 20px;">
+				</div>
 			</div>
 		</div>
 	</div>
@@ -156,11 +201,11 @@ import Talon from '../images/talon.png'
 	.navBar ul li {
 		float: left;
 		list-style-type: none;
+		padding: 17px;
 		transition: transform 0.2s ease;
 	}
-	ul li a {
+	.navbar ul li a {
 		display: block;
-		padding: 17px;
 	}
 	.navBar li:hover {
 		transform: scale(1.5);
@@ -327,6 +372,7 @@ import Talon from '../images/talon.png'
 	.project {
 		display: flex;
 		flex-direction: column;
+		justify-content: space-between;
 	}
 	.projectTitle {
 		padding: 5px;
@@ -334,31 +380,17 @@ import Talon from '../images/talon.png'
 	.projectBody {
 		padding: 5px;
 	}
-
-	/* footer */
-	#footer {
-		display:flex;
-		justify-content: space-between;
-		position: relative;
-		border-top: 2px solid black;
-		padding: 15px 8%;
-	}
-	.link {
-		color: #007bff;
-	}
-	.link:hover {
-		color: #0056b3;
-		text-decoration: underline;
-	}
-	.contact {
+	.tags {
 		display: flex;
-		width: auto;
-		flex-direction: column;
-		gap: 30px;
+		margin-top: 20px;
+		gap: 5px;
 	}
-	.contactBlocks {
-		display: flex;
-		gap: 20px;
+	.tag {
+		border: 2px solid black;
+		border-radius: 7px;
+		padding: 2px 5px;
+		display: inline-flex;
+		gap: 5px;
 	}
 
 	/* General */	
@@ -373,8 +405,13 @@ import Talon from '../images/talon.png'
 		border: 2px solid black;
 		border-radius: 10px;
 	}
-
-
+	.link {
+		color: #0000EE;
+	}
+	.link:hover{
+		color: #8282ff;
+	}
+	
 	/* Mobile Support */
 	@media (max-width: 600px) {
 	html {
@@ -401,10 +438,8 @@ import Talon from '../images/talon.png'
 	.paragraph {
 		padding: 35px 50px;
 	}
-	}
 
 	/* Notification */
-
 	.notification {
 		position: absolute;
 		right: 15px;
