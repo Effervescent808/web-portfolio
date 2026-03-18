@@ -22,6 +22,7 @@ import Sqlite from '../images/sqlite.png'
 import Sqlite2 from '../assets/sqlite2.svg'
 import NodeJS from '../assets/nodejs.svg'
 import Docker from '../assets/docker.svg'
+import Git from '../assets/git.svg'
 
 import Talon from '../images/talon.png'
 ---
@@ -79,6 +80,7 @@ import Talon from '../images/talon.png'
 			<img class="techImages" src={Sqlite.src}>
 			<img class="techImages" src={NodeJS.src}>
 			<img class="techImages" src={Docker.src}>
+			<img class="techImages" src={Git.src}>
 		</div>
 	</div>
 
@@ -91,7 +93,8 @@ import Talon from '../images/talon.png'
 			<p>None :(</p>
 		</div>
 		<div id="education" class="box">
-			<div style="width: 100%;">
+<!-- Start of IIT -->
+			<div style="width: 100%;" class="superOuterWorkJob">
 				<div class="outerWorkJob">
 					<a href="https://www.iit.edu/">
 						<img class="profile" src={Talon.src}>
@@ -123,6 +126,7 @@ import Talon from '../images/talon.png'
 					</div>
 				</div>
 			</div>
+<!-- End of IIT -->
 		</div>
 	</div>
 
@@ -137,7 +141,7 @@ import Talon from '../images/talon.png'
 					<p>Bear Banking</p>
 				</div>
 				<div class="projectBody">
-					<p>The Bear Banking dashboard is a bear themed dashboard designed for college students to track their finances.</p>
+					<p>The Bear Banking dashboard is a bear themed dashboard designed for college students to track their finances. It features a login system that keeps your own data personal, as well as a wide variety of budgeting tools to assist with smart spending.</p>
 				</div>
 				<div class="tags">
 					<div class="tag">
@@ -343,6 +347,7 @@ import Talon from '../images/talon.png'
 		align-items: baseline;
 		justify-content: space-between;
 		column-gap: 1rem;
+		color: #717873;
 	}
 	.profile {
 		border-radius: 50%;
@@ -350,14 +355,18 @@ import Talon from '../images/talon.png'
 		width: 50px;
 		height: 50px;
 	}
-	.innerWorkJob {
-		display: flex;
-		flex-direction: column;
-		width: 91%;
+	.superOuterWorkJob {
+		padding-bottom: 30px;
+		border-bottom: 2px dotted black;
 	}
 	.outerWorkJob {
 		display: flex;
 		gap: 40px;
+	}
+	.innerWorkJob {
+		display: flex;
+		flex-direction: column;
+		width: 91%;
 	}
 	.infoList ul{
 		list-style-type: disc;
@@ -365,6 +374,7 @@ import Talon from '../images/talon.png'
 	}
 	.infoList {
 		padding: 0px 10px;
+		margin-left: 10px;
 	}
 
 	/* Featured Projects */
@@ -389,6 +399,7 @@ import Talon from '../images/talon.png'
 	}
 	.projectBody {
 		padding: 5px;
+		color: #717873;
 	}
 	.tags {
 		display: flex;
