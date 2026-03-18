@@ -132,51 +132,55 @@ import Talon from '../images/talon.png'
 	<div id="featuredProjects">
 		<div class="project box">
 			<img src={BearBanking.src} style="border-radius: 10px; border: 2px solid black;">
-			<div class="projectTitle">
-				<p>Bear Banking</p>
-			</div>
-			<div class="projectBody">
-				<p>The Bear Banking dashboard is a bear themed dashboard designed for college students to track their finances.</p>
-			</div>
-			<div class="tags">
-				<div class="tag">
-					<p>Node.js</p>
-					<img src={NodeJS.src} style="width: 20px;">
+			<div class="lowerProject">
+				<div class="projectTitle">
+					<p>Bear Banking</p>
 				</div>
-				<div class="tag">
-					<p>Docker</p>
-					<img src={Docker.src} style="width: 20px;">
+				<div class="projectBody">
+					<p>The Bear Banking dashboard is a bear themed dashboard designed for college students to track their finances.</p>
 				</div>
-				<div class="tag">
-					<p>HTML</p>
-					<img src={Html.src} style="width: 20px;">
-				</div>
-				<div class="tag">
-					<p>CSS</p>
-					<img src={Css.src} style="width: 20px;">
-				</div>
-				<div class="tag">
-					<p>SQLite</p>
-					<img src={Sqlite2.src} style="width: 20px;">
+				<div class="tags">
+					<div class="tag">
+						<p>Node.js</p>
+						<img src={NodeJS.src} style="width: 20px;">
+					</div>
+					<div class="tag">
+						<p>Docker</p>
+						<img src={Docker.src} style="width: 20px;">
+					</div>
+					<div class="tag">
+						<p>HTML</p>
+						<img src={Html.src} style="width: 20px;">
+					</div>
+					<div class="tag">
+						<p>CSS</p>
+						<img src={Css.src} style="width: 20px;">
+					</div>
+					<div class="tag">
+						<p>SQLite</p>
+						<img src={Sqlite2.src} style="width: 20px;">
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="project box">
 			<img src={TuiPassmanager.src} style="border-radius: 10px; border: 2px solid black;">
-			<div class="projectTitle">
-				<p>Tui Passmanager</p>
-			</div>
-			<div class="projectBody">
-				<p>Tui Passmanager is a terminal based password manager that stores and retrieves passwords from an encrypted database. It also has password generation capabilities creating a strong random password with a length of your choice.</p>
-			</div>
-			<div class="tags">
-				<div class="tag">
-					<p>Python</p>
-					<img src={Python.src} style="width: 20px;">
+			<div class="lowerProject">
+				<div class="projectTitle">
+					<p>Tui Passmanager</p>
 				</div>
-				<div class="tag">
-					<p>SQLite</p>
-					<img src={Sqlite2.src} style="width: 20px;">
+				<div class="projectBody">
+					<p>Tui Passmanager is a terminal based password manager that stores and retrieves passwords from an encrypted database. It also has password generation capabilities creating a strong random password with a length of your choice.</p>
+				</div>
+				<div class="tags">
+					<div class="tag">
+						<p>Python</p>
+						<img src={Python.src} style="width: 20px;">
+					</div>
+					<div class="tag">
+						<p>SQLite</p>
+						<img src={Sqlite2.src} style="width: 20px;">
+					</div>
 				</div>
 			</div>
 		</div>
@@ -372,10 +376,16 @@ import Talon from '../images/talon.png'
 	.project {
 		display: flex;
 		flex-direction: column;
+	}
+	.lowerProject {
+		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
+		height: 100%;
 	}
 	.projectTitle {
 		padding: 5px;
+		font-size: 20px;
 	}
 	.projectBody {
 		padding: 5px;
@@ -414,29 +424,26 @@ import Talon from '../images/talon.png'
 	
 	/* Mobile Support */
 	@media (max-width: 600px) {
-	html {
-		font-size:13px;
-	}
-
-	.navBar {
-		height: 8%;
-	}
-
-	ul li a {
-		padding: 17px 10px;
-	}
-	#intro {
-		height: auto;
-	}
-
-	.box {
-		padding: 2%;
-		flex-direction: column;
-		height: 90%;
-	}
-
-	.paragraph {
-		padding: 35px 50px;
+		html {
+			font-size:13px;
+		}
+		.navBar {
+			height: 8%;
+		}
+		ul li a {
+			padding: 17px 10px;
+		}
+		#intro {
+			height: auto;
+		}
+		.box {
+			padding: 2%;
+			flex-direction: column;
+			height: 90%;
+		}
+		.paragraph {
+			padding: 35px 50px;
+		}
 	}
 
 	/* Notification */
@@ -452,23 +459,21 @@ import Talon from '../images/talon.png'
 		color: #FFFFFF;
 		transform: translateY(-200%);
 	}
-
 	.notification.show {
 		animation-name: noti;
 		animation-duration: 5s;
 		animation-fill-mode: forwards;
 	}
-
 	@keyframes noti {
 		0% {transform: translateY(-200%)}
 		20% {transform: translateY(0%)}
 		80% {transform: translateY(0%)}
 		100% {transform: translateY(-200%)}
 	}
-
 	.disable_click {
 		pointer-events: none;
 	}
+
 </style>
 
 <script>
