@@ -1,0 +1,95 @@
+---
+import IndexLayout from '../../layouts/indexLayout.astro';
+
+import BearBankingPage from '../../pages/projects/BearBanking.astro';
+import TuiPassmanagerPage from '../../pages/projects/TuiPassmanager.astro';
+
+import { Image } from 'astro:assets';
+import BackArrow from '../../assets/back-arrow.svg'
+
+const pages = {
+  'bear-banking': BearBankingPage,
+  'tui-passmanager': TuiPassmanagerPage,
+};
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'bear-banking' } },
+    { params: { slug: 'tui-passmanager' } },
+  ];
+}
+
+const { slug } = Astro.params;
+const ProjectPage = pages[slug];
+---
+
+<IndexLayout>
+	<div class="navBar">
+		<a class="backButton" href="javascript:history.back()">
+			<Image
+				src={BackArrow}
+				alt="BackArrow"
+				style="height: 15px; width:15px;"
+			/>
+			<p style="margin: 0;">Back</p>
+		</a>
+		<ul>
+			<li><a class="nav" href="/">Home</a></li>
+      			<li><a class="nav" href="javascript:void(0)">Projects</a></li>
+      			<li><a class="nav" href="javascript:void(0)">Photography</a></li>
+    		</ul>
+  	</div>
+
+	<ProjectPage {slug} />
+</IndexLayout>
+
+<style>
+  	.navBar {
+		position: relative;
+    		display: flex;
+    		justify-content: center;
+    		align-items: center;
+    		width: 100%;
+    		height: 5%;
+    		border-bottom: 2px solid black;
+  	}
+  	.backButton {
+		position: absolute;
+		left: 15px;
+		width: fit-content;
+		display: inline-flex;
+		align-items: center;
+		gap: 5px;
+		text-decoration: none;
+		color: inherit;
+		cursor: pointer;
+	}
+	ul {
+    		margin: 0;
+    		padding: 0;
+  	}
+  	.navBar ul li {
+    		float: left;
+    		list-style-type: none;
+    		padding: 17px;
+    		transition: transform 0.2s ease;
+  	}
+  	.navBar li:hover {
+    		transform: scale(1.5);
+  	}
+
+  	@media (max-width: 600px) {
+    		html {
+			font-size: 13px; 
+		}
+		.navBar { 
+			height: 8%;
+    		}
+  	}
+</style>
+
+<script>
+  	document.querySelectorAll('a[href="javascript:void(0)"]').forEach(link => {
+    		link.addEventListener('click', (e) => e.preventDefault());
+  	});
+</script>

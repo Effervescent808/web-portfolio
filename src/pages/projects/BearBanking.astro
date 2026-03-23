@@ -1,0 +1,120 @@
+---
+import { Image } from 'astro:assets';
+import BearBanking from '../../images/bearBanking.png';
+import GithubImage from '../../assets/github.svg';
+import NodeJS from '../../assets/nodejs.svg';
+import Docker from '../../assets/docker.svg';
+import Html from '../../assets/html.svg';
+import Css from '../../assets/css.svg';
+import Sqlite2 from '../../assets/sqlite2.svg';
+
+const { slug } = Astro.props;
+---
+
+<div id="projectPage">
+  <div id="hero" class="box">
+    <Image
+      src={BearBanking}
+      alt="Bear Banking"
+      transition:name={`project-img-${slug}`}
+      style="border-radius: 10px; border: 2px solid black; width: 100%; height: auto;"
+    />
+  </div>
+
+  <div id="projectDetails" class="box">
+    <div id="projectHeader">
+      <h1>Bear Banking</h1>
+      <a class="sourcetag" href="https://github.com/Effervescent808/BearBanking" target="_blank">
+        <p>Source</p>
+        <img src={GithubImage.src} style="width: 20px;">
+      </a>
+    </div>
+
+    <div class="tags">
+      <div class="tag"><p>Node.js</p><img src={NodeJS.src} style="width: 20px;"></div>
+      <div class="tag"><p>Docker</p><img src={Docker.src} style="width: 20px;"></div>
+      <div class="tag"><p>HTML</p><img src={Html.src} style="width: 20px;"></div>
+      <div class="tag"><p>CSS</p><img src={Css.src} style="width: 20px;"></div>
+      <div class="tag"><p>SQLite</p><img src={Sqlite2.src} style="width: 20px;"></div>
+    </div>
+
+    <div id="projectBody">
+      <p>The Bear Banking dashboard is a bear themed dashboard designed for college students to track their finances. It features a login system that keeps your own data personal, as well as a wide variety of budgeting tools to assist with smart spending.</p>
+    </div>
+
+    <!-- Add more content here -->
+
+  </div>
+</div>
+
+<style>
+  #projectPage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2% 14%;
+    flex-direction: column;
+    gap: 35px;
+  }
+  .box {
+    display: flex;
+    height: auto;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 16px;
+    padding: 15px;
+  }
+  #hero {
+    padding: 10px;
+  }
+  #projectDetails {
+    flex-direction: column;
+    gap: 20px;
+  }
+  #projectHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h1 {
+    font-size: 50px;
+    margin: 0;
+  }
+  #projectBody {
+    color: #3E3E3E;
+  }
+  .tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    border: 2px solid black;
+    border-radius: 7px;
+    padding: 2px 5px;
+    display: inline-flex;
+    gap: 5px;
+  }
+  .sourcetag {
+    border-width: 1px 3px 3px 1px;
+    border-radius: 10px;
+    padding: 7px 13px;
+    display: inline-flex;
+    gap: 5px;
+    transition: border-width 0.1s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+  .sourcetag:hover {
+    border-width: 3px 1px 1px 3px;
+  }
+
+  @media (max-width: 600px) {
+    #projectPage {
+      padding: 2%;
+    }
+    .box {
+      padding: 2%;
+    }
+  }
+</style>

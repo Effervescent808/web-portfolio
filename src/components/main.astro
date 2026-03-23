@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 import Placeholder500 from '../images/500x500.png'
 import Placeholder300 from '../images/300x200.png'
 import Profile from '../images/Tisen Hot Child.png'
@@ -135,13 +137,20 @@ import Talon from '../images/talon.png'
 
 	<div id="featuredProjects">
 		<div class="project box">
-			<img src={BearBanking.src} style="border-radius: 10px; border: 2px solid black;">
+			<a href="/projects/bear-banking">
+				<Image
+					src={BearBanking}
+					alt="Bear Banking"
+					transition:name="project-img-bear-banking"
+					style="border-radius: 10px; border: 2px solid black;"
+				/>
+			</a>
 			<div class="lowerProject">
 				<div class="projectTitle">
-					<p>Bear Banking</p>
+					<a href="/projects/bear-banking">Bear Banking</a>
 				</div>
 				<div class="projectBody">
-					<p>The Bear Banking dashboard is a bear themed dashboard designed for college students to track their finances. It features a login system that keeps your own data personal, as well as a wide variety of budgeting tools to assist with smart spending.</p>
+					<a href="/projects/bear-banking">The Bear Banking dashboard is a bear themed dashboard designed for college students to track their finances. It features a login system that keeps your own data personal, as well as a wide variety of budgeting tools to assist with smart spending.</a>
 				</div>
 				<div class="tags">
 					<div class="tag">
@@ -174,13 +183,20 @@ import Talon from '../images/talon.png'
 			</div>
 		</div>
 		<div class="project box">
-			<img src={TuiPassmanager.src} style="border-radius: 10px; border: 2px solid black;">
+			<a href="/projects/tui-passmanager">
+				<Image
+					src={TuiPassmanager}
+					alt="Tui Passmanager"
+					transition:name="project-img-tui-passmanager"
+					style="border-radius: 10px; border: 2px solid black;"
+				/>
+			</a>
 			<div class="lowerProject">
 				<div class="projectTitle">
-					<p>Tui Passmanager</p>
+					<a href="/projects/tui-passmanager">Tui Passmanager</a>
 				</div>
 				<div class="projectBody">
-					<p>Tui Passmanager is a terminal based password manager that stores and retrieves passwords from an encrypted database. It also has password generation capabilities creating a strong random password with a length of your choice.</p>
+					<a href="/projects/tui-passmanager">Tui Passmanager is a terminal based password manager that stores and retrieves passwords from an encrypted database. It also has password generation capabilities creating a strong random password with a length of your choice.</a>
 				</div>
 				<div class="tags">
 					<div class="tag">
