@@ -48,10 +48,10 @@ import Talon from '../images/talon.png'
 				<a id="resumeLink" href={Resume} download>
 					<img src={ResumeImage.src} width="40" height="40">
 				</a>
-				<a href="https://github.com/Effervescent808">
+				<a href="https://github.com/Effervescent808" target="_blank">
 					<img src={GithubImage.src} width="40" height="40">
 				</a>
-				<a href="https://www.linkedin.com/in/tyson-haufschild-0b0042357/">
+				<a href="https://www.linkedin.com/in/tyson-haufschild-0b0042357/" target="_blank">
 					<img src={LinkedInImage.src} width="40" height="40">
 				</a>
 				<a id="email">
@@ -165,6 +165,12 @@ import Talon from '../images/talon.png'
 						<img src={Sqlite2.src} style="width: 20px;">
 					</div>
 				</div>
+				<div>
+					<a class="sourcetag" href="https://github.com/Effervescent808/BearBanking" target="_blank">
+						<p>Source</p>
+						<img src={GithubImage.src} style="width: 20px;">
+					</a>
+				</div>
 			</div>
 		</div>
 		<div class="project box">
@@ -185,6 +191,12 @@ import Talon from '../images/talon.png'
 						<p>SQLite</p>
 						<img src={Sqlite2.src} style="width: 20px;">
 					</div>
+				</div>
+				<div>
+					<a class="sourcetag" href="https://github.com/Effervescent808/Password-Manager" target="_blank">
+						<p>Source</p>
+						<img src={GithubImage.src} style="width: 20px;">
+					</a>
 				</div>
 			</div>
 		</div>
@@ -347,7 +359,7 @@ import Talon from '../images/talon.png'
 		align-items: baseline;
 		justify-content: space-between;
 		column-gap: 1rem;
-		color: #717873;
+		color: #3E3E3E;
 	}
 	.profile {
 		border-radius: 50%;
@@ -391,6 +403,7 @@ import Talon from '../images/talon.png'
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		gap: 15px;
 		height: 100%;
 	}
 	.projectTitle {
@@ -399,7 +412,7 @@ import Talon from '../images/talon.png'
 	}
 	.projectBody {
 		padding: 5px;
-		color: #717873;
+		color: #3E3E3E;
 	}
 	.tags {
 		display: flex;
@@ -412,6 +425,17 @@ import Talon from '../images/talon.png'
 		padding: 2px 5px;
 		display: inline-flex;
 		gap: 5px;
+	}
+	.sourcetag {
+		border-width: 1px 3px 3px 1px;
+		border-radius: 10px;
+		padding: 7px 13px;
+		display: inline-flex;
+		gap: 5px;
+		transition: border-width 0.1s ease;
+	}
+	.sourcetag:hover {
+		border-width: 3px 1px 1px 3px;
 	}
 
 	/* General */	
