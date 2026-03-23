@@ -528,60 +528,64 @@ import Talon from '../images/talon.png'
 </style>
 
 <script>
-	const notification = document.querySelector('.notification');
-	const text = document.getElementById('notiText');
+	function init() {
+		const notification = document.querySelector('.notification');
+		const text = document.getElementById('notiText');
 
-	document.querySelectorAll('a[href="javascript:void(0)"]').forEach(link => {
-		link.addEventListener('click', unfinishedPage);
-	});
+		document.querySelectorAll('a[href="javascript:void(0)"]').forEach(link => {
+			link.addEventListener('click', unfinishedPage);
+		});
 
-	function unfinishedPage(event){
-		const a = event.currentTarget;
-		event.preventDefault();
-		notification.classList.remove('show');
-		void notification.offsetWidth; 
-		text.innerHTML = "Sorry, that page isn't finished yet";
-		notification.classList.add('show');
-		a.classList.add('disable_click');
-		setTimeout(() => a.classList.remove('disable_click'), 5000);
+		function unfinishedPage(event) {
+			const a = event.currentTarget;
+			event.preventDefault();
+			notification.classList.remove('show');
+			void notification.offsetWidth;
+			text.innerHTML = "Sorry, that page isn't finished yet";
+			notification.classList.add('show');
+			a.classList.add('disable_click');
+			setTimeout(() => a.classList.remove('disable_click'), 5000);
+		}
+
+		const workButton = document.getElementById('workButton');
+		const educationButton = document.getElementById('educationButton');
+		const work = document.getElementById('work');
+		const education = document.getElementById('education');
+
+		educationButton.classList.add('active');
+
+		workButton.addEventListener('click', () => {
+			education.classList.add('hide');
+			work.classList.remove('hide');
+			workButton.classList.add('active');
+			educationButton.classList.remove('active');
+		});
+
+		educationButton.addEventListener('click', () => {
+			work.classList.add('hide');
+			education.classList.remove('hide');
+			workButton.classList.remove('active');
+			educationButton.classList.add('active');
+		});
+
+		const emailBtn = document.getElementById('email');
+		const dropdown = document.getElementById('dropdown');
+		let hideTimeout;
+
+		emailBtn.addEventListener('mouseenter', () => {
+			clearTimeout(hideTimeout);
+			setTimeout(() => { dropdown.style.display = 'block' }, 100);
+		});
+		emailBtn.addEventListener('mouseleave', () => {
+			hideTimeout = setTimeout(() => dropdown.style.display = 'none', 100);
+		});
+		dropdown.addEventListener('mouseenter', () => {
+			clearTimeout(hideTimeout);
+		});
+		dropdown.addEventListener('mouseleave', () => {
+			hideTimeout = setTimeout(() => dropdown.style.display = 'none', 100);
+		});
 	}
 
-	const workButton = document.getElementById('workButton');
-	const educationButton = document.getElementById('educationButton');
-	const work = document.getElementById('work');
-	const education = document.getElementById('education');
-
-	educationButton.classList.add('active');
-
-	workButton.addEventListener('click', () => {
-		education.classList.add('hide');
-		work.classList.remove('hide');
-		workButton.classList.add('active');
-		educationButton.classList.remove('active');
-	});
-
-	educationButton.addEventListener('click', () => {
-		work.classList.add('hide');
-		education.classList.remove('hide');
-		workButton.classList.remove('active');
-		educationButton.classList.add('active');
-	});
-
-	const emailBtn = document.getElementById('email');
-	const dropdown = document.getElementById('dropdown');
-	let hideTimeout;
-
-	emailBtn.addEventListener('mouseenter', () => {
-		clearTimeout(hideTimeout);
-		setTimeout(() => {dropdown.style.display = 'block'}, 100);
-	});
-	emailBtn.addEventListener('mouseleave', () => {
-		hideTimeout = setTimeout(() => dropdown.style.display = 'none', 100);
-	});
-	dropdown.addEventListener('mouseenter', () => {
-		clearTimeout(hideTimeout);
-	});
-	dropdown.addEventListener('mouseleave', () => {
-		hideTimeout = setTimeout(() => dropdown.style.display = 'none', 100);
-	});
+  	document.addEventListener('astro:page-load', init);
 </script>
