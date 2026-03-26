@@ -33,14 +33,16 @@ import Git from '../assets/git.svg'
 
 <!-- Bear Banking -->
 	<div class="project box">
-		<a href="/projects/bear-banking">
-			<Image
-				src={BearBanking}
-				alt="Bear Banking"
-				transition:name="project-img-bear-banking"
-				style="border-radius: 16px; border: 2px solid black; padding: 15px;"
-			/>
-		</a>
+		<div class="projectImage">
+			<a href="/projects/bear-banking">
+				<Image
+					src={BearBanking}
+					alt="Bear Banking"
+					transition:name="project-img-bear-banking"
+					style="border-radius: 10px;"
+				/>
+			</a>
+		</div>
 		<div class="lowerProject">
 			<div class="projectTitle">
 				<a href="/projects/bear-banking">Bear Banking</a>
@@ -75,14 +77,16 @@ import Git from '../assets/git.svg'
 
 <!-- Tui Passmanager -->
 	<div class="project box">
-		<a href="/projects/tui-passmanager">
-			<Image
-				src={TuiPassmanager}
-				alt="Tui Passmanager"
-				transition:name="project-img-tui-passmanager"
-				style="border-radius: 16px; border: 2px solid black; padding: 15px;"
-			/>
-		</a>
+		<div class="projectImage">
+			<a href="/projects/tui-passmanager">
+				<Image
+					src={TuiPassmanager}
+					alt="Tui Passmanager"
+					transition:name="project-img-tui-passmanager"
+					style="border-radius: 10px;"
+				/>
+			</a>
+		</div>
 		<div class="lowerProject">
 			<div class="projectTitle">
 				<a href="/projects/tui-passmanager">Tui Passmanager</a>
@@ -105,14 +109,16 @@ import Git from '../assets/git.svg'
 
 <!-- Blackjack -->
 	<div class="project box">
-		<a href="/projects/blackjack">
-			<Image
-				src={Blackjack}
-				alt="Blackjack"
-				transition:name="project-img-blackjack"
-				style="border-radius: 16px; border: 2px solid black; padding: 15px;"
-			/>
-		</a>
+		<div class="projectImage">
+			<a href="/projects/blackjack">
+				<Image
+					src={Blackjack}
+					alt="Blackjack"
+					transition:name="project-img-blackjack"
+					style="border-radius: 10px;"
+				/>
+			</a>
+		</div>
 		<div class="lowerProject">
 			<div class="projectTitle">
 				<a href="/projects/blackjack">Blackjack</a>
@@ -212,11 +218,15 @@ import Git from '../assets/git.svg'
 		border: 2px solid black;
 		border-radius: 16px;
 	}
+	.projectImage {
+		padding: 10px;
+	}
 	.lowerProject {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		height: 100%;
+		border-top: 2px solid black;
 	}
 	.projectTitle {
 		padding: 5px;
