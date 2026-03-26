@@ -3,6 +3,7 @@ import IndexLayout from '../../layouts/indexLayout.astro';
 
 import BearBankingPage from '../../pages/projects/BearBanking.astro';
 import TuiPassmanagerPage from '../../pages/projects/TuiPassmanager.astro';
+import BlackjackPage from '../../pages/projects/Blackjack.astro'
 
 import { Image } from 'astro:assets';
 import BackArrow from '../../assets/back-arrow.svg'
@@ -10,12 +11,14 @@ import BackArrow from '../../assets/back-arrow.svg'
 const pages = {
   'bear-banking': BearBankingPage,
   'tui-passmanager': TuiPassmanagerPage,
+  'blackjack': BlackjackPage,
 };
 
 export function getStaticPaths() {
   return [
     { params: { slug: 'bear-banking' } },
     { params: { slug: 'tui-passmanager' } },
+    { params: { slug: 'blackjack' } },
   ];
 }
 
@@ -35,7 +38,7 @@ const ProjectPage = pages[slug];
 		</a>
 		<ul>
 			<li><a class="nav" href="/">Home</a></li>
-      			<li><a class="nav" href="javascript:void(0)">Projects</a></li>
+			<li><a class="nav" href="/pageProjects">Projects</a></li>
       			<li><a class="nav" href="javascript:void(0)">Photography</a></li>
     		</ul>
   	</div>
