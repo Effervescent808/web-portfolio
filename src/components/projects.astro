@@ -6,6 +6,7 @@ import TuiPassmanager from '../images/tuiPassmanager.png'
 import Blackjack from '../images/blackjack.png'
 
 import GithubImage from '../assets/github.svg'
+import Folder from '../assets/folder.svg'
 
 import Python from '../assets/python.svg'
 import Java from '../assets/java.svg'
@@ -29,7 +30,51 @@ import Git from '../assets/git.svg'
 	<div class="notification"><p id="notiText"></p></div>
 </div>
 
+<div class="titleBar">
+	<Image 
+		src={Folder} 
+		alt="Folder"
+		width="100"
+	/>
+	<h1>Projects</h1>
+</div>
+
 <div id="featuredProjects">
+
+<!-- Tui Passmanager -->
+	<div class="project box">
+		<div class="projectImage">
+			<a href="/projects/tui-passmanager">
+				<Image
+					src={TuiPassmanager}
+					alt="Tui Passmanager"
+					transition:name="project-img-tui-passmanager"
+					style="border-radius: 10px;"
+				/>
+			</a>
+		</div>
+		<div class="lowerProject">
+			<div class="projectTitle">
+				<a href="/projects/tui-passmanager">Tui Passmanager</a>
+				<div>
+					<span>December 2025</span>
+				</div>
+			</div>
+			<div class="projectBody">
+				<a href="/projects/tui-passmanager">Tui Passmanager is a terminal based password manager that securely stores and retrieves passwords from a local database.</a>
+			</div>
+			<div class="tags">
+				<div class="tag">
+					<p>Python</p>
+					<img src={Python.src} style="width: 15px;">
+				</div>
+				<div class="tag">
+					<p>SQLite</p>
+					<img src={Sqlite2.src} style="width: 15px;">
+				</div>
+			</div>
+		</div>
+	</div>
 
 <!-- Bear Banking -->
 	<div class="project box">
@@ -46,6 +91,9 @@ import Git from '../assets/git.svg'
 		<div class="lowerProject">
 			<div class="projectTitle">
 				<a href="/projects/bear-banking">Bear Banking</a>
+				<div>
+					<span>November 2025</span>
+				</div>
 			</div>
 			<div class="projectBody">
 				<a href="/projects/bear-banking">The Bear Banking dashboard is a bear themed dashboard designed for college students to track their finances.</a>
@@ -75,38 +123,6 @@ import Git from '../assets/git.svg'
 		</div>
 	</div>
 
-<!-- Tui Passmanager -->
-	<div class="project box">
-		<div class="projectImage">
-			<a href="/projects/tui-passmanager">
-				<Image
-					src={TuiPassmanager}
-					alt="Tui Passmanager"
-					transition:name="project-img-tui-passmanager"
-					style="border-radius: 10px;"
-				/>
-			</a>
-		</div>
-		<div class="lowerProject">
-			<div class="projectTitle">
-				<a href="/projects/tui-passmanager">Tui Passmanager</a>
-			</div>
-			<div class="projectBody">
-				<a href="/projects/tui-passmanager">Tui Passmanager is a terminal based password manager that securely stores and retrieves passwords from a local database.</a>
-			</div>
-			<div class="tags">
-				<div class="tag">
-					<p>Python</p>
-					<img src={Python.src} style="width: 15px;">
-				</div>
-				<div class="tag">
-					<p>SQLite</p>
-					<img src={Sqlite2.src} style="width: 15px;">
-				</div>
-			</div>
-		</div>
-	</div>
-
 <!-- Blackjack -->
 	<div class="project box">
 		<div class="projectImage">
@@ -122,6 +138,9 @@ import Git from '../assets/git.svg'
 		<div class="lowerProject">
 			<div class="projectTitle">
 				<a href="/projects/blackjack">Blackjack</a>
+				<div>
+					<span>August 2025</span>
+				</div>
 			</div>
 			<div class="projectBody">
 				<a href="/projects/tui-passmanager">Free blackjack in the browser. Play 1 on 1 with the Dealer.</a>
@@ -150,8 +169,12 @@ import Git from '../assets/git.svg'
 		margin: 0;
 		padding: 0;
 	}
-	h1 {
-		text-align:center;
+	.titleBar {
+		display: inline-flex;
+		gap: 20px;
+		text-align: left;
+		font-size: 70px;
+		margin: 30px 14% 0 14%;
 	}
 
 /* Nav Bar */
@@ -205,7 +228,7 @@ import Git from '../assets/git.svg'
 		pointer-events: none;
 	}
 
-/* Featured Projects */
+/*Projects */
 	#featuredProjects {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
@@ -229,8 +252,14 @@ import Git from '../assets/git.svg'
 		border-top: 2px solid black;
 	}
 	.projectTitle {
+		display: inline-flex;
+		justify-content: space-between;
 		padding: 5px;
 		font-size: 20px;
+	}
+	.projectTitle span {
+		font-size: 15px;
+		color: grey;
 	}
 	.projectBody {
 		padding: 5px;
