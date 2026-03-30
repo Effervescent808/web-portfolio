@@ -219,11 +219,13 @@ import Florida from '../images/Photography/Florida.jpg'
 	}
 </style>
 <script>
-	document.querySelectorAll('.horImage, .vertImage').forEach(picture => {
-		picture.addEventListener('click', openPopup);
-	});
+	document.addEventListener('astro:page-load', () => {
+		document.querySelectorAll('.horImage, .vertImage').forEach(picture => {
+			picture.addEventListener('click', openPopup);
+		});
 
-	document.getElementById("popout").addEventListener('click', closePopup);
+		document.getElementById("popout").addEventListener('click', closePopup);
+	});
 
 	function openPopup(event){
 		const bg = document.getElementById('popout');
