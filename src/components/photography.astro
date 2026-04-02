@@ -21,7 +21,9 @@ import Florida from '../images/Photography/Florida.jpg'
 	<div class="notification"><p id="notiText"></p></div>
 </div>
 
-<div id="popout" ><Image src={Church1} alt="popout" class="popout-image" /></div>
+<div id="popout" ><Image src={Church1} alt="popout" class="popout-image" />
+	<p>This is the image info</p>
+</div>
 
 <div class="titleBar">
 	<Image 
@@ -217,6 +219,13 @@ import Florida from '../images/Photography/Florida.jpg'
 		object-fit: contain;
 		margin: auto;
 	}
+	#popout p {
+		color: darkgrey;
+		position: absolute;
+		bottom: 15px;
+		word-spacing: 20px;
+	}
+
 </style>
 <script>
 	document.addEventListener('astro:page-load', () => {
@@ -227,10 +236,23 @@ import Florida from '../images/Photography/Florida.jpg'
 		document.getElementById("popout").addEventListener('click', closePopup);
 	});
 
+	const imageInfo = {
+		"Church1": "iPhone16   6.0mm   f/1.6   1/5s   ISO1000   2026.03.09 01:20",
+		"Church2": "iPhone16   2.2mm   f/2.2   1/7s   ISO1000   2026.03.09 02:01",
+		"Church3": "CanonEOS5D   50.0mm   f/2.5   1/21s   ISO1600   2026.03.09 02:07",
+		"Church4": "CanonEOS5D   50.0mm   f/2.5   1/13s   ISO1600   2026.03.09 02:09",
+		"Florida": "iPhone16   6.0mm   f/1.6   1/28s   ISO1000   2025.07.04 20:24",
+		"Park": "iPhone16   6.0mm   f/1.6   1/122s   ISO50   2025.10.18 17:01",
+		"Camping": "iPhone16   6.0mm   f/1.6   1/407s   ISO64   2025.08.03 08:18",
+		"Lake": "iPhone16   6.0mm   f/1.6   1/232s   ISO40   2025.08.02 18:55"
+	}
+
 	function openPopup(event){
 		const bg = document.getElementById('popout');
 		const image = bg.querySelector('.popout-image');
+		const info = bg.querySelector('p');
 		image.src = event.target.src;
+		info.innerHTML = imageInfo[event.target.alt];
 		bg.style.display = "flex";
 		document.body.classList.add('noScroll')	
 	}
