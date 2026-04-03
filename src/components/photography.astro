@@ -1,6 +1,7 @@
 ---
 import { Image } from  'astro:assets'
 import Camera from '../assets/camera.svg'
+import Arrow from '../assets/back-arrow.svg'
 
 import Church1 from '../images/Photography/Church1.JPG'
 import Church2 from '../images/Photography/Church2.JPG'
@@ -33,7 +34,16 @@ import Florida from '../images/Photography/Florida.jpg'
 	/>
 	<h1>Photography</h1>
 </div>
-				
+
+<div class="clickMe">
+	<Image
+		src={Arrow}
+		alt="arrow"
+		width="15"
+	/>
+	<p>Click me</p>
+</div>
+
 <div class="bigDiv">
 <!-- First 4 -->
 	<div class="parent">
@@ -151,6 +161,30 @@ import Florida from '../images/Photography/Florida.jpg'
 		transform: scale(1.5);
 	}
 
+	/* ClickMe */
+	.clickMe {
+		display: inline-flex;
+		position: fixed;
+		left: 87%;
+		top: 50%;
+		z-index: 10;
+	}
+	.clickMe.hide {
+		display: none;
+	}
+	.clickMe p {
+		animation-name: fade;
+		animation-duration: 1s;
+		animation-iteration-count: infinite; 
+		animation-direction: alternate;
+		animation-timing-function: ease-in-out;
+	}
+	@keyframes fade {
+		0% {opacity: 1}
+		100% {opacity: 0}
+	}
+
+
 	/* Grid */
 	.parent {
 		display:grid;
@@ -220,7 +254,7 @@ import Florida from '../images/Photography/Florida.jpg'
 		margin: auto;
 	}
 	#popout p {
-		color: darkgrey;
+		color: lightgrey;
 		position: absolute;
 		bottom: 15px;
 		word-spacing: 20px;
@@ -251,9 +285,11 @@ import Florida from '../images/Photography/Florida.jpg'
 		const bg = document.getElementById('popout');
 		const image = bg.querySelector('.popout-image');
 		const info = bg.querySelector('p');
+		const clickMe = document.querySelector('.clickMe');
 		image.src = event.target.src;
 		info.innerHTML = imageInfo[event.target.alt];
 		bg.style.display = "flex";
+		clickMe.classList.add('hide');
 		document.body.classList.add('noScroll')	
 	}
 

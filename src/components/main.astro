@@ -48,6 +48,7 @@ import Epic from '../images/epic.jpg'
 			<p id="spacing1"></p>
 			<p>I am currently a first year Computer Science student at the Illinois Institute of Technology.</p>
 			<div id="links">
+				<label for="links">Links:</label>
 				<a id="resumeLink" href={Resume} download>
 					<img src={ResumeImage.src} width="40" height="40">
 				</a>
@@ -311,6 +312,11 @@ import Epic from '../images/epic.jpg'
 		align-items: center;
 		bottom: 5px;
 		left: 5px;
+	}
+	#links label {
+		position: absolute;
+		left: 5px;
+		top: -55%;
 	}
 	#links a img{
 		transition: transform 0.3s ease;
