@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Blackjack from '../../images/blackjack.png';
 import GithubImage from '../../assets/github.svg';
+import Page from '../../assets/page.svg';
 import JavaScript from '../../assets/javascript.svg';
 import Html from '../../assets/html.svg';
 import Css from '../../assets/css.svg';
@@ -10,111 +11,124 @@ const { slug } = Astro.props;
 ---
 
 <div id="projectPage">
-  <div id="hero" class="box">
-    <Image
-      src={Blackjack}
-      alt="Blackjack"
-      transition:name={`project-img-${slug}`}
-      style="border-radius: 10px; border: 2px solid black; width: 100%; height: auto;"
-    />
-  </div>
-
-  <div id="projectDetails" class="box">
-    <div id="projectHeader">
-      <h1>Blackjack on the Web</h1>
-      <div>
-	      <a class="sourcetag" href="https://Effervescent808.github.io" target="_blank">
-		<p>Web</p>
-		<img src={GithubImage.src} style="width: 20px;">
-	      </a>
-	      <a class="sourcetag" href="https://github.com/Effervescent808/Effervescent808.github.io" target="_blank">
-		<p>Source</p>
-		<img src={GithubImage.src} style="width: 20px;">
-	      </a>
+	<div id="hero" class="box">
+		<Image
+			src={Blackjack}
+			alt="Blackjack"
+			transition:name={`project-img-${slug}`}
+			style="border-radius: 10px; border: 2px solid black; width: 100%; height: auto;"
+		/>
 	</div>
-    </div>
 
-    <div class="tags">
-      <div class="tag">JavaScript<p></p><img src={JavaScript.src} style="width: 20px;"></div>
-      <div class="tag"><p>HTML</p><img src={Html.src} style="width: 20px;"></div>
-      <div class="tag"><p>CSS</p><img src={Css.src} style="width: 20px;"></div>
-    </div>
+	<div id="projectDetails" class="box">
+		<div id="projectHeader">
+			<h1>Blackjack on the Web</h1>
+			<div>
+				<a class="sourcetag" href="https://Effervescent808.github.io" target="_blank">
+					<p>Demo</p>
+					<img src={Page.src} style="width: 20px;">
+				</a>
+				<a class="sourcetag" href="https://github.com/Effervescent808/Effervescent808.github.io" target="_blank">
+					<p>Source</p>
+					<img src={GithubImage.src} style="width: 20px;">
+				</a>
+			</div>
+		</div>
 
-    <div id="projectBody">
-      <p>Blackjack</p>
-    </div>
+		<div class="tags">
+			<div class="tag">JavaScript<p></p><img src={JavaScript.src} style="width: 20px;"></div>
+			<div class="tag"><p>HTML</p><img src={Html.src} style="width: 20px;"></div>
+			<div class="tag"><p>CSS</p><img src={Css.src} style="width: 20px;"></div>
+		</div>
 
-  </div>
+		<div id="projectBody">
+			<div>
+				<h2>Overview</h2>
+				<p>I built blackjack for the web as a way to play blackjack without the need for spending real money.</p>
+			</div>
+		</div>
+	</div>
 </div>
 
 <style>
-  #projectPage {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 2% 14%;
-    flex-direction: column;
-    gap: 35px;
-  }
-  .box {
-    display: flex;
-    height: auto;
-    box-sizing: border-box;
-    border: 2px solid black;
-    border-radius: 16px;
-    padding: 15px;
-  }
-  #hero {
-    padding: 10px;
-  }
-  #projectDetails {
-    flex-direction: column;
-    gap: 20px;
-  }
-  #projectHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  h1 {
-    font-size: 50px;
-    margin: 0;
-  }
-  #projectBody {
-    color: #3E3E3E;
-  }
-  .tags {
-    display: flex;
-    gap: 5px;
-    flex-wrap: wrap;
-  }
-  .tag {
-    border: 2px solid black;
-    border-radius: 7px;
-    padding: 2px 5px;
-    display: inline-flex;
-    gap: 5px;
-  }
-  .sourcetag {
-    border-width: 1px 3px 3px 1px;
-    border-radius: 10px;
-    padding: 7px 13px;
-    display: inline-flex;
-    gap: 5px;
-    transition: border-width 0.1s ease;
-    text-decoration: none;
-    color: inherit;
-  }
-  .sourcetag:hover {
-    border-width: 3px 1px 1px 3px;
-  }
+/* Body Design */
+	#projectPage {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		padding: 2% 14%;
+		flex-direction: column;
+		gap: 35px;
+  	}
+  	.box {
+		display: flex;
+    		height: auto;
+    		box-sizing: border-box;
+    		border: 2px solid black;
+    		border-radius: 16px;
+    		padding: 15px;
+  	}
+  	#hero {
+    		padding: 10px;
+  	}
+  	#projectDetails {
+    		flex-direction: column;
+    		gap: 20px;
+  	}
+  	#projectHeader {
+    		display: flex;
+    		justify-content: space-between;
+    		align-items: center;
+  	}
 
-  @media (max-width: 600px) {
-    #projectPage {
-      padding: 2%;
-    }
-    .box {
-      padding: 2%;
-    }
-  }
+/* Body Text */
+  	h1 {
+    		font-size: 50px;
+    		margin: 0;
+  	}
+  	h2 {
+    		font-size: 40px;
+		color: black;
+    		margin: 0;
+  	}
+  	#projectBody {
+    		color: #3E3E3E;
+  	}
+
+/* Tags */
+  	.tags {
+    		display: flex;
+    		gap: 5px;
+    		flex-wrap: wrap;
+  	}
+  	.tag {
+    		border: 2px solid black;
+    		border-radius: 7px;
+    		padding: 2px 5px;
+    		display: inline-flex;
+    		gap: 5px;
+  	}
+  	.sourcetag {
+    		border-width: 1px 3px 3px 1px;
+    		border-radius: 10px;
+    		padding: 7px 13px;
+    		display: inline-flex;
+    		gap: 5px;
+    		transition: border-width 0.1s ease;
+    		text-decoration: none;
+    		color: inherit;
+  	}
+  	.sourcetag:hover {
+    		border-width: 3px 1px 1px 3px;
+  	}
+
+/* Mobile Support */
+  	@media (max-width: 600px) {
+    		#projectPage {
+      			padding: 2%;
+    		}
+    		.box {
+			padding: 2%; 
+		}
+  	}
 </style>

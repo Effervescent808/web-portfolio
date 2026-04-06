@@ -35,44 +35,47 @@ import Florida from '../images/Photography/Florida.jpg'
 	<h1>Photography</h1>
 </div>
 
-<div class="clickMe">
-	<Image
-		src={Arrow}
-		alt="arrow"
-		width="15"
-	/>
-	<p>Click me</p>
-</div>
-
 <div class="bigDiv">
 <!-- First 4 -->
 	<div class="parent">
 		<div class="div1"> 
+			<!-- 4:3 -->
 			<Image
 				src={Church1}
 				alt="Church1"
 				class="vertImage"
+				width="900"
+				height="1200"
 			/>
 		</div>
 		<div class="div2"> 
+			<!-- 4:3 -->
 			<Image
 				src={Church2}
 				alt="Church2"
 				class="vertImage"
+				width="900"
+				height="1200"
 			/>
 		</div>
 		<div class="div3">
+			<!-- 2:3 -->
 			<Image
 				src={Church3}
 				alt="Church3"
 				class="vertImage"
+				width="800"
+				height="1200"
 			/>
 		</div>
 		<div class="div4">
+			<!-- 2:3 -->
 			<Image
 				src={Church4}
 				alt="Church4"
 				class="vertImage"
+				width="800"
+				height="1200"
 			/>
 		</div>
 	</div>
@@ -80,31 +83,43 @@ import Florida from '../images/Photography/Florida.jpg'
 <!-- Second 4 -->
 	<div class="parent">
 		<div class="div1"> 
+			<!-- 4:3 -->
 			<Image
 				src={MillenniumPark}
 				alt="Park"
 				class="vertImage"
+				width="900"
+				height="1200"
 			/>
 		</div>
 		<div class="div2"> 
+			<!-- 4:3 -->
 			<Image
 				src={Lake}
 				alt="Lake"
 				class="horImage"
+				width="1200"
+				height="900"
 			/>
 		</div>
 		<div class="div3">
+			<!-- 4:3 -->
 			<Image
 				src={Camping}
 				alt="Camping"
 				class="vertImage"
+				width="900"
+				height="1200"
 			/>
 		</div>
 		<div class="div4">
+			<!-- 4:3 -->
 			<Image
 				src={Florida}
 				alt="Florida"
 				class="horImage"
+				width="1200"
+				height="900"
 			/>
 		</div>
 	</div>
@@ -161,30 +176,6 @@ import Florida from '../images/Photography/Florida.jpg'
 		transform: scale(1.5);
 	}
 
-	/* ClickMe */
-	.clickMe {
-		display: inline-flex;
-		position: fixed;
-		left: 87%;
-		top: 50%;
-		z-index: 10;
-	}
-	.clickMe.hide {
-		display: none;
-	}
-	.clickMe p {
-		animation-name: fade;
-		animation-duration: 1s;
-		animation-iteration-count: infinite; 
-		animation-direction: alternate;
-		animation-timing-function: ease-in-out;
-	}
-	@keyframes fade {
-		0% {opacity: 1}
-		100% {opacity: 0}
-	}
-
-
 	/* Grid */
 	.parent {
 		display:grid;
@@ -193,44 +184,35 @@ import Florida from '../images/Photography/Florida.jpg'
 		grid-column-gap: 10px;
 		grid-row-gap: 10px;
 	}
-	.div1 { 
-		grid-area: 1 / 1 / 3 / 4; 
+	.div1, .div2, .div3, .div4 {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		overflow: hidden;
 		height: 500px;
+		transition: transform 0.2s ease;
+	}
+	.div1 { 
+		grid-area: 1 / 1 / 3 / 4; 
 	}
 	.div2 { 
 		grid-area: 3 / 3 / 5 / 6; 
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		overflow: hidden;
-		height: 500px;
 	}
 	.div3 { 
 		grid-area: 3 / 1 / 5 / 3; 
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		overflow: hidden;
-		height: 500px;
 	}
 	.div4 { 
 		grid-area: 1 / 4 / 3 / 6; 
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		overflow: hidden;
-		height: 500px;
 	}
-	.vertImage {
-		width: 100%;
+	.div1:hover, .div2:hover, .div3:hover, .div4:hover {
+		transform: scale(1.02);
 	}
+	.vertImage,
 	.horImage {
-		height: 100%;
-	}
+		object-fit: cover;
+		width: 100%;
+	    	height: 100%;
+	} 
 
 	/* Popout Window */
 	#popout {
@@ -241,7 +223,7 @@ import Florida from '../images/Photography/Florida.jpg'
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0,0,0,0.85);
+		background-color: rgba(0,0,0,0.93);
 		justify-content: center;
 		align-items: center;
 		overflow: auto;
@@ -258,6 +240,7 @@ import Florida from '../images/Photography/Florida.jpg'
 		position: absolute;
 		bottom: 15px;
 		word-spacing: 20px;
+		border-top: 2px solid lightgrey;
 	}
 
 </style>
