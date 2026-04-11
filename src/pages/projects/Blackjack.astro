@@ -42,9 +42,29 @@ const { slug } = Astro.props;
 		</div>
 
 		<div id="projectBody">
-			<div>
+			<div class="textDiv">
 				<h2>Overview</h2>
-				<p>I built blackjack for the web as a way to play blackjack without the need for spending real money.</p>
+				<p class="projectBody">Blackjack for the web is a simple blackjack simulation where you play 1 on 1 against the dealer with fake money.</p>
+			</div>
+			<div class="textDiv">
+				<h2>Features</h2>
+				<ul class="outerList">
+					<li>ALL IN BUTTON
+						<ul class="innerList">
+							<li>Go all in with just the click of a button</li>
+						</ul>
+					</li>
+					<li>Name based accounts
+						<ul class="innerList">
+							<li>Sign in with the same name every time to play with the same set of fake money</li>
+						</ul>
+					</li>
+					<li>Total Counters
+						<ul class="innerList">
+							<li>Let the website count your totals for you </li>
+						</ul>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -79,6 +99,7 @@ const { slug } = Astro.props;
     		display: flex;
     		justify-content: space-between;
     		align-items: center;
+		border-bottom: 2px solid grey;
   	}
 
 /* Body Text */
@@ -90,10 +111,33 @@ const { slug } = Astro.props;
     		font-size: 40px;
 		color: black;
     		margin: 0;
+		text-align: center;
   	}
-  	#projectBody {
+	.projectBody {
     		color: #3E3E3E;
+	}
+  	#projectBody {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding: 2% 20%;
+		font-size: 20px;
   	}
+	.textDiv {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding: 0 30px 40px 30px;
+		border-bottom: 2px solid grey;
+	}
+	.outerList {
+		list-style-type: disc;
+		padding: 10px 30px;
+	}
+	.innerList {
+		list-style-type: circle;
+		padding: 10px;
+	}
 
 /* Tags */
   	.tags {
