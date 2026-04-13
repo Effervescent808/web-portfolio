@@ -34,7 +34,7 @@ const ProjectPage = pages[slug];
 				alt="BackArrow"
 				style="height: 15px; width:15px;"
 			/>
-			<p style="margin: 0;">Back</p>
+			<p style="margin: 0; color: #ffa066">Back</p>
 		</a>
 		<ul>
 			<li><a class="nav" href="/">Home</a></li>
@@ -47,19 +47,36 @@ const ProjectPage = pages[slug];
 </IndexLayout>
 
 <style>
-  	.navBar {
-		position: sticky;
-		top:0;
-		background-color: white;
-		z-index: 1;
-    		display: flex;
-    		justify-content: center;
-    		align-items: center;
-    		width: 100%;
-    		height: 5%;
-    		border-bottom: 2px solid black;
-  	}
-  	.backButton {
+	.navBar {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 6.5%;
+		position: fixed;
+		border-bottom: 2px solid #7686a6;
+		background-color: rgba(47, 47, 64, .7);
+		backdrop-filter: blur(10px);
+		z-index: 10;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+	.navBar ul li {
+		float: left;
+		list-style-type: none;
+		padding: 17px;
+		transition: transform 0.2s ease;
+		color: #ffa066;
+	}
+	.navbar ul li a {
+		display: block;
+	}
+	.navBar li:hover {
+		transform: scale(1.5);
+	}
+	.backButton {
 		position: absolute;
 		left: 15px;
 		width: fit-content;
@@ -67,22 +84,8 @@ const ProjectPage = pages[slug];
 		align-items: center;
 		gap: 5px;
 		text-decoration: none;
-		color: inherit;
 		cursor: pointer;
 	}
-	ul {
-    		margin: 0;
-    		padding: 0;
-  	}
-  	.navBar ul li {
-    		float: left;
-    		list-style-type: none;
-    		padding: 17px;
-    		transition: transform 0.2s ease;
-  	}
-  	.navBar li:hover {
-    		transform: scale(1.5);
-  	}
 
   	@media (max-width: 600px) {
     		html {

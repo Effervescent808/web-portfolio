@@ -175,6 +175,7 @@ import Git from '../assets/git.svg'
 		text-align: left;
 		font-size: 70px;
 		margin: 30px 14% 0 14%;
+		padding-top: 5%;
 	}
 
 /* Nav Bar */
@@ -183,20 +184,28 @@ import Git from '../assets/git.svg'
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		height: 5%;
-		border-bottom: 2px solid black;
-		overflow: hidden;
+		height: 6.5%;
+		position: fixed;
+		border-bottom: 2px solid #96a5c3;
+		background-color: rgba(47, 47, 64, .7);
+		backdrop-filter: blur(10px);
+		z-index: 10;
 	}
-	ul li {
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+	.navBar ul li {
 		float: left;
 		list-style-type: none;
-		transition: transform 0.2s ease;
-	}
-	ul li a {
-		display: block;
 		padding: 17px;
+		transition: transform 0.2s ease;
+		color: #ffa066;
 	}
-	li:hover {
+	.navbar ul li a {
+		display: block;
+	}
+	.navBar li:hover {
 		transform: scale(1.5);
 	}
 
@@ -238,9 +247,16 @@ import Git from '../assets/git.svg'
 	.project {
 		display: flex;
 		flex-direction: column;
-		border: 2px solid black;
+		border: 2px solid #7686a6;
 		border-radius: 16px;
-		box-shadow: 5px 5px 1px darkgrey;
+		box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 8px 20px 0 rgba(0, 0, 0, 0.28);
+		transition: transform .2s ease;
+	}
+	.project:hover, .project:hover .lowerProject {
+		border-color: #ffa066;
+	}
+	.project:hover {
+		transform: scale(1.02);
 	}
 	.projectImage {
 		padding: 10px;
@@ -250,7 +266,7 @@ import Git from '../assets/git.svg'
 		flex-direction: column;
 		justify-content: space-between;
 		height: 100%;
-		border-top: 2px solid black;
+		border-top: 2px solid #7686a6;
 	}
 	.projectTitle {
 		display: inline-flex;
@@ -264,7 +280,7 @@ import Git from '../assets/git.svg'
 	}
 	.projectBody {
 		padding: 5px;
-		color: #3E3E3E;
+		color: lightgrey;
 		padding-left: 10px;
 	}
 	.tags {
@@ -274,7 +290,7 @@ import Git from '../assets/git.svg'
 		padding: 10px;
 	}
 	.tag {
-		border: 2px solid black;
+		border: 2px solid #7686a6;
 		border-radius: 7px;
 		padding: 2px 5px;
 		display: inline-flex;

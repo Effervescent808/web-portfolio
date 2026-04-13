@@ -309,20 +309,25 @@ import Walk from '../images/Photography/walk.jpg'
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		height: 5%;
-		border-bottom: 2px solid black;
-		overflow: hidden;
+		height: 6.5%;
+		border-bottom: 2px solid #96a5c3;
+		background-color: rgba(47, 47, 64, .7);
 	}
-	ul li {
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+	.navBar ul li {
 		float: left;
 		list-style-type: none;
-		transition: transform 0.2s ease;
-	}
-	ul li a {
-		display: block;
 		padding: 17px;
+		transition: transform 0.2s ease;
+		color: #ffa066;
 	}
-	li:hover {
+	.navbar ul li a {
+		display: block;
+	}
+	.navBar li:hover {
 		transform: scale(1.5);
 	}
 
@@ -388,7 +393,8 @@ import Walk from '../images/Photography/walk.jpg'
 	#popout p {
 		color: lightgrey;
 		position: absolute;
-		bottom: 15px;
+		width: 50%;
+		bottom: 25px;
 		word-spacing: 20px;
 		border-top: 2px solid lightgrey;
 	}

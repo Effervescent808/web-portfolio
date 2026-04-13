@@ -62,20 +62,21 @@ const { slug } = Astro.props;
 </div>
 
 <style>
-/* Body Styling */
+/* Body Style */
   	#projectPage {
     		width: 100%;
-    		display: flex;
-    		justify-content: center;
-    		padding: 2% 14%;
-    		flex-direction: column;
-    		gap: 35px;
+		display: flex;
+		justify-content: center;
+		padding: 2% 14%;
+		padding-top: 5%;
+		flex-direction: column;
+		gap: 35px;
   	}
-  	.box {
+	.box {
     		display: flex;
     		height: auto;
     		box-sizing: border-box;
-    		border: 2px solid black;
+    		border: 2px solid #7686a6;
     		border-radius: 16px;
     		padding: 15px;
   	}
@@ -88,9 +89,10 @@ const { slug } = Astro.props;
   	}
   	#projectHeader {
     		display: flex;
-		justify-content: space-between; 
-		align-items: center;
-		border-bottom: 2px solid grey;
+    		justify-content: space-between;
+    		align-items: center;
+		border-bottom: 2px solid #7686a6;
+		color: #ffa066;
   	}
 
 /* Body Text */
@@ -100,12 +102,12 @@ const { slug } = Astro.props;
   	}
 	h2 {
 		font-size: 40px;
-		color: black;
+		color: #ffa066;
 		margin: 0;
 		text-align: center;
 	}
 	.projectBody {
-    		color: #3E3E3E;
+    		color: #96a5c3;
 	}
   	#projectBody {
 		display: flex;
@@ -119,7 +121,7 @@ const { slug } = Astro.props;
 		flex-direction: column;
 		gap: 20px;
 		padding: 0 30px 40px 30px;
-		border-bottom: 2px solid grey;
+		border-bottom: 2px solid #7686a6;
 	}
 	.outerList {
 		list-style-type: disc;
@@ -137,7 +139,7 @@ const { slug } = Astro.props;
     		flex-wrap: wrap;
   	}
   	.tag {
-    		border: 2px solid black;
+    		border: 2px solid #7686a6;
     		border-radius: 7px;
     		padding: 2px 5px;
     		display: inline-flex;
