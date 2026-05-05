@@ -40,7 +40,7 @@ import data from '../../public/commits.json'
 
 <!-- Nav Bar -->
 <div class="mobileWarning">
-	<p>You appear to be on a mobile device, this website is not configured a smaller screen size. Please use a laptop.</p>
+	<p style="text-align: center;">You appear to be on a mobile device, this website is not configured a smaller screen size. Please use a laptop.</p>
 	<button>Continue</button>
 </div>
 <div class="navBar">
@@ -336,6 +336,9 @@ import data from '../../public/commits.json'
 		height: 100%;
 		z-index: 11;
 		display: none;
+		position: fixed;
+	        top: 0px;
+        	left: 0px;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
@@ -746,8 +749,7 @@ import data from '../../public/commits.json'
 				pn.style.display='block';
 				notification.style.display='block';
 			});
-	}
-
+		}
 	}
 
 	function init() {
