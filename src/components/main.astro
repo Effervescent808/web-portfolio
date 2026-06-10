@@ -31,8 +31,10 @@ import Git from '../assets/git.svg'
 import Tux from '../assets/tux.svg'
 import Bash from '../assets/bash.svg'
 
+import Cam from '../images/cam.png'
 import Talon from '../images/talon.png'
 import Epic from '../images/epic.jpg'
+import HopeCycle from '../images/hopecycle.jpg'
 
 import data from '../../public/commits.json'
 ---
@@ -57,7 +59,7 @@ import data from '../../public/commits.json'
 		<div class="paragraph">
 			<h1>Hey! I'm Tyson Haufschild</h1>
 			<p id="spacing1"></p>
-			<p>I am currently a first year Computer Science student at the Illinois Institute of Technology in Illinois, Chicago.</p>
+			<p>I am currently a second year Computer Science student at Colorado State University in Fort Collins, Colorado.</p>
 			<div id="links">
 				<label for="links">Links:</label>
 				<a id="resumeLink" href={Resume} download>
@@ -76,7 +78,7 @@ import data from '../../public/commits.json'
 					<img src={EmailImage.src} style="width:100%; height: 100%;">
 				</a>
 				<div id="dropdown">
-					<a class="email" href="mailto:thaufschild@hawk.illinoistech.edu">School Email</a>
+					<a class="email" href="mailto:C837603411@colostate.edu">School Email</a>
 					<a class="email" href="mailto:haufschildtyson@gmail.com">Personal Email</a>
 				</div>
 			</div>
@@ -143,13 +145,64 @@ import data from '../../public/commits.json'
 			<button class="selectorButton" id="educationButton">Education</button>
 		</div>
 		<div id="work" class="box hide">
-			<p>None :(</p>
+<!-- Start of HopeCycle -->
+			<div style="width: 100%;" class="superOuterWorkJob">
+				<div class="outerWorkJob">
+					<a href="https://www.hopecycle.org/" target="_blank">
+						<img class="profile" src={HopeCycle.src}>
+					</a>
+					<div class="innerWorkJob">
+						<div class="bigHeader">
+							<p>HopeCycle</p>
+						</div>
+						<div class="workJobHeader">
+							<p>Volunteer Web Administrator</p>
+							<time>
+								<span>June 2026</span>
+								<span> - </span>
+								<span>Present</span>
+							</time>
+						</div>
+						<div class="infoList">
+							<ul>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+<!-- End of HopeCycle -->
 		<div id="education" class="box">
+<!-- Start of CSU -->
+			<div style="width: 100%;" class="superOuterWorkJob">
+				<div class="outerWorkJob">
+					<a href="https://www.colostate.edu/" target="_blank">
+						<img class="profile" src={Cam.src}>
+					</a>
+					<div class="innerWorkJob">
+						<div class="bigHeader">
+							<p>Colorado State University</p>
+						</div>
+						<div class="workJobHeader">
+							<p>BS in Computer Science</p>
+							<time>
+								<span>August 2026</span>
+								<span> - </span>
+								<span>Present</span>
+							</time>
+						</div>
+						<div class="infoList">
+							<ul>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+<!-- End of CSU -->
 <!-- Start of IIT -->
 			<div style="width: 100%;" class="superOuterWorkJob">
 				<div class="outerWorkJob">
-					<a href="https://www.iit.edu/">
+					<a href="https://www.iit.edu/" target="_blank">
 						<img class="profile" src={Talon.src}>
 					</a>
 					<div class="innerWorkJob">
@@ -161,11 +214,18 @@ import data from '../../public/commits.json'
 							<time>
 								<span>August 2025</span>
 								<span> - </span>
-								<span>Present</span>
+								<span>May 2026</span>
 							</time>
 						</div>
 						<div class="infoList">
 							<ul>
+								<li>
+									<a href="/projects/bear-banking" class="link">
+										<span>Bear Banking</span>
+									</a>
+									<span> - </span>
+									<span>CS100</span>
+								</li>
 								<li>
 									<span>Member of the IIT Men's Volleyball Team</span>
 									<span> - </span>
@@ -182,7 +242,7 @@ import data from '../../public/commits.json'
 <!-- Start of Epic -->
 			<div style="width: 100%;" class="superOuterWorkJob">
 				<div class="outerWorkJob">
-					<a href="https://www.littletonpublicschools.net/o/epiccampus">
+					<a href="https://www.littletonpublicschools.net/o/epiccampus" target="_blank">
 						<img class="profile" src={Epic.src}>
 					</a>
 					<div class="innerWorkJob">
@@ -204,6 +264,9 @@ import data from '../../public/commits.json'
 								</li>
 								<li>
 									<span>Cybersecurity II - Linux Administrator</span>
+								</li>
+								<li>
+									<span>CompTIA ITF+ Certification</span>
 								</li>
 							</ul>
 						</div>
@@ -320,13 +383,14 @@ import data from '../../public/commits.json'
 <div class="patchNotes box">
 	{data.map((commit) => 
 		<div class="note">
-			<a href={commit.html_url}>{commit.commit.message}</a>
+			<a href={commit.html_url} target="_blank">{commit.commit.message}</a>
 			<p>{new Date(commit.commit.author.date).toLocaleString()}</p>
 		</div>
 	)}
 </div>
 
 <span id="patchNotes" class="link">Patch Notes</span>
+<span id="contactMe" class="link">Contact Me!</span>
 
 <style>
 
@@ -654,6 +718,24 @@ import data from '../../public/commits.json'
 		z-index: 2;
 	}
 
+	/* Contact Me */
+	#contactMe {
+		padding: 10px; 
+		position: fixed; 
+		left: 5px; 
+		bottom: 5px; 
+		font-size: 17px; 
+		z-index: 2;
+	}
+	@keyframes blink {
+		0% {opacity: 1}
+		50% {opacity: 0}
+		100% {opacity: 1}
+	}
+	.blink {
+		animation: blink 1s ease 5;
+	}
+
 	/* General */	
 	h1 {
 		font-size: 50px;
@@ -841,6 +923,22 @@ import data from '../../public/commits.json'
 				document.removeEventListener('click', closePatchNotes);
 			}
 		}
+
+		const cm = document.getElementById('contactMe');
+
+		cm.addEventListener('click', scrollToEmail);
+
+		function scrollToEmail(event) {
+			emailBtn.scrollIntoView({
+				behavior: 'smooth',
+				block: 'center',
+				inline: 'nearest'
+			});
+			emailBtn.classList.remove("blink");
+    			void emailBtn.offsetWidth;
+    			emailBtn.classList.add("blink");
+		}
+
 	}
 
 	mobileWarning();
